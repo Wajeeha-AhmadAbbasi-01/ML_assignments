@@ -37,10 +37,10 @@ The target is converted into a binary variable:
 project/
 │
 ├── raw data/
-│   └── Telco_customer_churn(1).csv
+│   └── Telco_customer_churn.csv
 │
 ├── notebook/
-│   └── churn_models.ipynb
+│   └── PART_B_and_C.ipynb
 │
 ├── results/
 │   ├── model_comparison.csv
