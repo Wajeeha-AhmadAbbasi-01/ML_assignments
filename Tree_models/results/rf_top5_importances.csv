@@ -1,0 +1,6 @@
+feature,importance
+remainder__Total Charges,0.128
+remainder__Tenure Months,0.1164
+remainder__Monthly Charges,0.108
+remainder__CLTV,0.105
+cat__Contract_Month-to-month,0.0509

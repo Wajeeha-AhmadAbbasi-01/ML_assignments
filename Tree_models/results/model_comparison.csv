@@ -1,0 +1,4 @@
+model,precision,recall,f1,pr_auc,training_time_s,inference_time_s
+KNN,0.581,0.6043,0.5924,0.5828,0.0338,0.0322
+Decision Tree,0.6708,0.4358,0.5284,0.5789,0.0399,0.0103
+Random Forest,0.6412,0.516,0.5719,0.642,0.8949,0.0804
