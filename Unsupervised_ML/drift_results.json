@@ -1,0 +1,9 @@
+{
+    "feature_tested": "Monthly Charges",
+    "simulated_shift": "+20",
+    "ks_statistic": 0.26614620298083747,
+    "p_value": 2.78938469119963e-44,
+    "drift_detected": true,
+    "mean_churn_probability_before": 0.26589098743249806,
+    "mean_churn_probability_after": 0.34632964960878754
+}

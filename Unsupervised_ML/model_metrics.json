@@ -1,0 +1,18 @@
+{
+    "model": "Logistic Regression",
+    "best_parameters": {
+        "model__C": 10
+    },
+    "cv_f1": 0.5553043334752077,
+    "test_accuracy": 0.7785663591199432,
+    "test_precision": 0.6013071895424836,
+    "test_recall": 0.4919786096256685,
+    "test_f1": 0.5411764705882353,
+    "test_pr_auc": 0.599186333861574,
+    "features": [
+        "Tenure Months",
+        "Monthly Charges",
+        "Total Charges",
+        "Contract"
+    ]
+}
