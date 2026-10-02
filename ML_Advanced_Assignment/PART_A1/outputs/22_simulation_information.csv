@@ -1,0 +1,4 @@
+Feature,Mechanism,Mechanism_definition,Rate_control
+SkinThickness,MCAR,Missingness probability is independent of data values,Approximately 15%
+BMI,MAR,Missingness probability depends on observed Age,"Probability varies with Age, capped at 30%"
+Insulin,MNAR,Missingness probability depends on the underlying Insulin value,"Probability varies with Insulin, capped at 35%"

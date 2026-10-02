@@ -1,0 +1,9 @@
+,Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age
+Pregnancies,,,,,,,,
+Glucose,,,,,,,,
+BloodPressure,,,,,,,,
+SkinThickness,,,,1.0,-0.0030686542981360116,-0.042869295740658724,,
+Insulin,,,,-0.0030686542981360116,1.0,-0.004311951038514301,,
+BMI,,,,-0.042869295740658724,-0.004311951038514301,1.0,,
+DiabetesPedigreeFunction,,,,,,,,
+Age,,,,,,,,

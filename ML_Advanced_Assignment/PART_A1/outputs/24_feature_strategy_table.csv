@@ -1,0 +1,9 @@
+Feature,Diagnosis,Strategy,Justification
+Pregnancies,Baseline missingness,Median,Simple robust imputation
+Glucose,Baseline missingness,Median,Robust to skew and outliers
+BloodPressure,Baseline missingness,Median,Robust to skew and outliers
+SkinThickness,Simulated MCAR,Median,MCAR does not require a special missingness indicator
+Insulin,Simulated MNAR,Median + Indicator,Indicator preserves information that the value was missing
+BMI,Simulated MAR,MICE,Uses relationships among observed variables under MAR assumption
+DiabetesPedigreeFunction,Baseline missingness,Median,Simple robust imputation
+Age,Baseline missingness,Median,Simple robust imputation

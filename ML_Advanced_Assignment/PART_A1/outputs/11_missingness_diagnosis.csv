@@ -1,0 +1,4 @@
+Feature,Injected Mechanism,How Missingness Was Generated,Chosen Repair
+SkinThickness,MCAR,"Randomly, independent of observed and unobserved values",Median imputation
+BMI,MAR,Missingness probability depends on observed Age,MICE / Iterative Imputation
+Insulin,MNAR,Missingness probability depends on the underlying Insulin value,Median imputation + missing indicator

@@ -1,0 +1,66 @@
+
+EHR MISSING DATA PROJECT SUMMARY
+================================
+
+Dataset:
+Pima Indians Diabetes dataset
+
+Rows:
+768
+
+Features:
+8
+
+Target:
+Outcome
+
+Train/Test Split:
+80% / 20%
+
+Cross-validation:
+5-fold StratifiedKFold
+
+Final Test ROC-AUC:
+0.7985
+
+Final Test Accuracy:
+0.7013
+
+Final Test Precision:
+0.5833
+
+Final Test Recall:
+0.5185
+
+Final Test F1:
+0.5490
+
+Final Pipeline Mean CV ROC-AUC:
+0.8341
+
+Final Pipeline CV ROC-AUC Std:
+0.0224
+
+Best Ablation Strategy by Mean ROC-AUC:
+MICE
+
+Best Ablation Mean ROC-AUC:
+0.8349
+
+Missingness strategies:
+- SkinThickness: Median imputation for simulated MCAR
+- BMI: MICE / IterativeImputer for simulated MAR
+- Insulin: Median + missingness indicator for simulated MNAR
+- Other variables: Median imputation
+
+Important limitation:
+The missingness mechanisms are known because MCAR, MAR, and MNAR
+were deliberately injected for this project. In a real EHR dataset,
+MAR and especially MNAR generally cannot be proven from observed data alone.
+
+Leakage prevention:
+All imputation and preprocessing steps are contained inside sklearn
+Pipeline / ColumnTransformer objects and are therefore fitted separately
+inside each cross-validation training fold.
+
+
