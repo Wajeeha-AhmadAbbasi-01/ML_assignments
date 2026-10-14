@@ -1,0 +1,32 @@
+
+Q2 - COMPARISON OF IMBALANCE STRATEGIES
+
+Strategies compared:
+
+1. Baseline
+   No imbalance correction.
+
+2. Class Weight
+   Uses class_weight='balanced'.
+
+3. SMOTE
+   Creates synthetic minority observations.
+
+4. Random Undersampling
+   Removes majority-class observations.
+
+All strategies used:
+5-fold StratifiedKFold
+
+The EXACT SAME CV folds were used for all methods.
+
+Best strategy according to mean PR-AUC:
+Baseline
+
+Best mean PR-AUC:
+0.958554
+
+Interpretation:
+This comparison determines which imbalance-handling
+strategy provides the strongest fraud-detection performance
+for the same classifier and same validation folds.

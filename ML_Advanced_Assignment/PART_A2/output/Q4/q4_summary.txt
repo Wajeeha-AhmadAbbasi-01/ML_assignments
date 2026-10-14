@@ -1,0 +1,31 @@
+
+Q4 - SMOTE FROM SCRATCH
+
+Original minority observations:
+10
+
+Synthetic minority observations:
+90
+
+Algorithm:
+
+1. Select a minority observation.
+2. Find its nearest minority neighbors.
+3. Select one neighbor randomly.
+4. Generate a random interpolation value.
+5. Create a synthetic observation between
+   the selected observation and its neighbor.
+
+Core idea:
+
+Synthetic =
+Original +
+random_value *
+(Neighbor - Original)
+
+No imbalanced-learn SMOTE implementation
+was used for this question.
+
+The visualization shows the original minority
+points and the synthetic points created between
+minority neighbors.

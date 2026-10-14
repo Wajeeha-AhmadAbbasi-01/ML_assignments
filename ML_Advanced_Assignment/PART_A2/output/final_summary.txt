@@ -1,0 +1,119 @@
+
+============================================================
+IMBALANCED CLASSIFICATION ASSIGNMENT - FINAL SUMMARY
+============================================================
+
+DATASET
+------------------------------------------------------------
+Samples: 10000
+Features: 10
+Normal cases: 9900
+Fraud cases: 100
+Fraud rate: 1.00%
+
+
+============================================================
+Q1 - SMOTE + STRATIFIED K-FOLD
+============================================================
+
+Mean PR-AUC:
+0.939538
+
+Std PR-AUC:
+0.060049
+
+Result:
+SMOTE was applied inside the Pipeline, so it was fitted
+only on each training fold.
+
+
+============================================================
+Q2 - FOUR IMBALANCE STRATEGIES
+============================================================
+
+Best strategy:
+Baseline
+
+Best mean PR-AUC:
+0.958554
+
+
+============================================================
+Q3 - THRESHOLD TUNING
+============================================================
+
+Target recall:
+90.00%
+
+Selected threshold:
+0.882402
+
+Precision:
+0.803571
+
+Recall:
+0.900000
+
+F1:
+0.849057
+
+Confusion Matrix:
+
+TN = 9878
+FP = 22
+FN = 10
+TP = 90
+
+
+============================================================
+Q4 - SMOTE FROM SCRATCH
+============================================================
+
+Original minority samples:
+10
+
+Synthetic minority samples:
+90
+
+SMOTE creates synthetic observations by interpolating
+between minority observations and their nearest
+minority neighbors.
+
+
+============================================================
+Q5 - BALANCED RF VS RF + SMOTE
+============================================================
+
+Best model:
+Random Forest + SMOTE
+
+Best mean PR-AUC:
+0.965419
+
+
+============================================================
+OUTPUT FOLDERS
+============================================================
+
+Q1:
+output/Q1/
+
+Q2:
+output/Q2/
+
+Q3:
+output/Q3/
+
+Q4:
+output/Q4/
+
+Q5:
+output/Q5/
+
+Final summary:
+output/final_summary.csv
+output/final_summary.txt
+
+============================================================
+END
+============================================================

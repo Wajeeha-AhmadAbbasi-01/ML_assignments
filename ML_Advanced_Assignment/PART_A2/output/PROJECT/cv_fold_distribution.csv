@@ -1,0 +1,6 @@
+fold,train_size,train_fraud,train_fraud_pct,validation_size,validation_fraud,validation_fraud_pct
+1,16000,48,0.3,4000,12,0.3
+2,16000,48,0.3,4000,12,0.3
+3,16000,48,0.3,4000,12,0.3
+4,16000,48,0.3,4000,12,0.3
+5,16000,48,0.3,4000,12,0.3

@@ -1,0 +1,157 @@
+
+PROJECT — FRAUD DETECTION UNDER EXTREME IMBALANCE
+=================================================
+
+DATASET
+-------
+Source:
+Synthetic fallback: 20,000 anonymized credit-card-style transactions with 0.3% fraud prevalence. Replace DATA_PATH with a real dataset when available.
+
+Transactions:
+20,000
+
+Normal transactions:
+19,940
+
+Fraud transactions:
+60
+
+Fraud prevalence:
+0.3000%
+
+
+EDA FINDINGS
+------------
+The dataset is highly imbalanced, with fraud representing
+only 0.3000% of transactions.
+
+Feature separability was examined using the standardized
+difference between the fraud and normal class means.
+The top features are stored in:
+feature_separability.csv
+
+
+CROSS-VALIDATION DESIGN
+-----------------------
+A 5-fold StratifiedKFold was used.
+
+The exact same folds were used for every strategy.
+
+Any resampling operation was embedded inside the
+imblearn Pipeline. Therefore SMOTE and undersampling
+were fitted only on the training portion of each fold.
+
+Imputation and scaling were also performed inside the
+pipeline to prevent preprocessing leakage.
+
+
+IMBALANCE STRATEGIES
+--------------------
+The following four strategies were compared:
+
+1. Baseline
+2. Class Weight Balanced
+3. SMOTE
+4. Random Undersampling
+
+The main ranking metric was PR-AUC because fraud is rare.
+Business cost was also evaluated using:
+
+False Positive Cost = 1
+False Negative Cost = 20
+
+Therefore:
+
+Expected Cost = FP × 1 + FN × 20
+
+
+FINAL COST-BASED RECOMMENDATION
+--------------------------------
+Recommended strategy:
+Baseline
+
+Recommended threshold:
+0.058000
+
+Expected total cost:
+675
+
+True Negatives:
+19905
+
+False Positives:
+35
+
+False Negatives:
+32
+
+True Positives:
+28
+
+Precision:
+0.444444
+
+Recall:
+0.466667
+
+F1:
+0.455285
+
+PR-AUC:
+0.422398
+
+
+COST JUSTIFICATION
+------------------
+The final threshold was NOT selected using accuracy or F1.
+
+It was selected by minimizing:
+
+    20 × FN + 1 × FP
+
+This is appropriate because a missed fraud transaction
+is assumed to cost twenty times as much as a false alarm.
+
+Compared with the baseline's best achievable cost under
+the same threshold-search procedure:
+
+Baseline minimum cost:
+675
+
+Recommended minimum cost:
+675
+
+Absolute cost reduction:
+0
+
+Percentage cost reduction:
+0.00%
+
+
+RECOMMENDATION
+--------------
+The recommended strategy is Baseline with a
+decision threshold of 0.0580.
+
+The recommendation is based on expected business cost,
+not simply the highest PR-AUC. This matters because a
+fraud system should explicitly reflect the much larger
+business consequence of false negatives.
+
+Operationally, the selected probability threshold should
+be monitored after deployment because fraud prevalence,
+fraud patterns, and the cost assumptions can change over
+time.
+
+
+KEY OUTPUT FILES
+----------------
+comparison_table.csv
+best_threshold_by_strategy.csv
+threshold_cost_table.csv
+eda_class_distribution.png
+eda_feature_separability.png
+cost_vs_threshold.png
+confusion_matrix_recommended.png
+project_summary.csv
+project_summary.txt

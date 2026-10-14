@@ -1,0 +1,25 @@
+
+Q5 - BALANCED RANDOM FOREST VS RANDOM FOREST + SMOTE
+
+Models:
+
+1. Random Forest + SMOTE
+   SMOTE is applied to each training fold before
+   fitting the Random Forest.
+
+2. Balanced Random Forest
+   Uses balanced sampling internally while
+   constructing the forest.
+
+The SAME StratifiedKFold splits were used
+for both models.
+
+Best model according to mean PR-AUC:
+Random Forest + SMOTE
+
+Best mean PR-AUC:
+0.965419
+
+Interpretation:
+This comparison evaluates two different ways
+of combining ensemble learning with imbalance handling.

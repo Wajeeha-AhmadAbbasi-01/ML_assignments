@@ -1,0 +1,13 @@
+feature,dtype,missing_count,missing_pct,n_unique
+V1,float64,0,0.0,20000
+V2,float64,0,0.0,20000
+V3,float64,0,0.0,20000
+V4,float64,0,0.0,20000
+V5,float64,0,0.0,20000
+V6,float64,0,0.0,20000
+V7,float64,0,0.0,20000
+V8,float64,0,0.0,20000
+V9,float64,0,0.0,20000
+V10,float64,0,0.0,20000
+V11,float64,0,0.0,20000
+V12,float64,0,0.0,20000

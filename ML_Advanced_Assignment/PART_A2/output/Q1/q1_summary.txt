@@ -1,0 +1,22 @@
+
+Q1 - SMOTE INSIDE STRATIFIED K-FOLD
+
+Method:
+SMOTE + Logistic Regression
+
+Cross-validation:
+5-fold StratifiedKFold
+
+Important:
+SMOTE was placed inside an imblearn Pipeline.
+Therefore, SMOTE was fitted only on each training fold.
+
+Mean PR-AUC:
+0.939538
+
+Standard Deviation:
+0.060049
+
+Interpretation:
+This evaluates whether SMOTE improves detection of the
+rare fraud class while avoiding data leakage.

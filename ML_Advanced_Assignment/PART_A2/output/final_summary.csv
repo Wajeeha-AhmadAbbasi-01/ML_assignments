@@ -1,0 +1,6 @@
+Question,Purpose,Main_Result
+Q1,Evaluate SMOTE with leakage-free cross-validation,Mean PR-AUC = 0.939538
+Q2,Compare four imbalance strategies,Best Strategy = Baseline
+Q3,Tune threshold to achieve target recall,Threshold = 0.882402
+Q4,Understand SMOTE interpolation from scratch,90 synthetic samples created
+Q5,Compare Balanced RF with RF + SMOTE,Best Model = Random Forest + SMOTE

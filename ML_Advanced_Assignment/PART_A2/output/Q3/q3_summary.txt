@@ -1,0 +1,42 @@
+
+Q3 - THRESHOLD TUNING
+
+Target recall:
+90.00%
+
+Selected threshold:
+0.882402
+
+Resulting precision:
+0.803571
+
+Resulting recall:
+0.900000
+
+Resulting F1:
+0.849057
+
+Confusion Matrix:
+
+True Negatives:
+9878
+
+False Positives:
+22
+
+False Negatives:
+10
+
+True Positives:
+90
+
+Interpretation:
+The default classification threshold of 0.50 is not
+necessarily optimal for fraud detection.
+
+The threshold was selected so that recall reaches at
+least the target of 90%, while minimizing false positives
+among eligible thresholds.
+
+This represents a business trade-off between catching
+fraud and generating unnecessary fraud alerts.
