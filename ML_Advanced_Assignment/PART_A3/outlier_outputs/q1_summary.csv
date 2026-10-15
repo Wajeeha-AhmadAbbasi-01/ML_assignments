@@ -1,0 +1,5 @@
+method,flagged_count,flagged_percent
+Z-score,14,3.72
+IQR,29,7.71
+Isolation Forest,23,6.12
+LOF,23,6.12

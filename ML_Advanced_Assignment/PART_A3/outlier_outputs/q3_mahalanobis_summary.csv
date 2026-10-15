@@ -1,0 +1,3 @@
+method,flagged_count,cutoff
+Empirical covariance,23,7.377758908227871
+MinCovDet robust covariance,27,7.377758908227871

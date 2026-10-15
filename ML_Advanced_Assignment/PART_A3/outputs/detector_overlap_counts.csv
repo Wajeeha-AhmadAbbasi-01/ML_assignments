@@ -1,0 +1,4 @@
+,IQR_any_feature,IsolationForest,LocalOutlierFactor
+IQR_any_feature,681.0,183.0,47.0
+IsolationForest,183.0,185.0,23.0
+LocalOutlierFactor,47.0,23.0,185.0

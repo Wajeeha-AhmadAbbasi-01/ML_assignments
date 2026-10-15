@@ -1,0 +1,13 @@
+feature,recommended_initial_treatment,risk_note
+PT08.S1(CO),Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+NMHC(GT),Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+C6H6(GT),Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+PT08.S2(NMHC),Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+NOx(GT),Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+PT08.S3(NOx),Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+NO2(GT),Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+PT08.S4(NO2),Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+PT08.S5(O3),Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+T,Retain; impute missing values; compare cap/transform variants,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+RH,Retain as-is; impute missing values; avoid automatic clipping,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.
+AH,Retain as-is; impute missing values; avoid automatic clipping,An extreme value may be a genuine pollution/sensor event; do not delete based on detector flag alone.

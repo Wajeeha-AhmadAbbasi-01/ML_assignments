@@ -1,0 +1,4 @@
+method,flagged_rows,flagged_percent
+IQR_any_feature,681,11.09
+IsolationForest,185,3.01
+LocalOutlierFactor,185,3.01
