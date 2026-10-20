@@ -1,0 +1,3 @@
+Method,Test accuracy
+Without scaling,0.9035087719298246
+With StandardScaler,0.956140350877193

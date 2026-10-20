@@ -1,0 +1,19 @@
+FEATURE SCALING EXPERIMENTS — SUMMARY
+
+Q1 — KNN accuracy
+Compared test accuracy with raw features and StandardScaler. KNN uses distances, so large-scale features can dominate when scaling is not applied.
+
+Q2 — PCA explained variance
+Compared component-wise explained-variance ratios before and after StandardScaler. PCA is sensitive to feature variance, so large-scale features can dominate unscaled PCA.
+
+Q3 — ColumnTransformer and cross-validation
+Applied StandardScaler, MinMaxScaler, and RobustScaler to different feature groups inside a Pipeline. Five-fold cross-validation fits preprocessing within each training fold, reducing data leakage risk.
+
+Q4 — Ridge bootstrap coefficient stability
+Repeated bootstrap sampling and compared Ridge coefficient variability using the same alpha. Scaled coefficients were converted back to original feature units. Scaling changes the effective regularization applied to differently scaled features; it does not guarantee every coefficient becomes more stable. The binary target is treated as numeric for this demonstration.
+
+Q5 — Logistic Regression convergence
+Compared SAGA solver iteration counts and convergence warnings with and without StandardScaler. Scaling often improves optimization, but the result depends on the data and settings.
+
+Overall conclusion
+Scaling is especially important for distance-based models, PCA, regularized models, and many gradient-based optimizers. Always fit preprocessing on training data only, preferably inside a Pipeline. The CSV files and PNG plots in this folder contain the actual results from this run.

@@ -1,0 +1,3 @@
+Method,Solver iterations,Convergence warning
+Without scaling,446,False
+With StandardScaler,201,False

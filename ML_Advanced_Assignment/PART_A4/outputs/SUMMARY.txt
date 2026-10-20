@@ -1,0 +1,42 @@
+PART A4 — THE COST OF SKIPPING SCALING
+==========================================
+
+Dataset: scikit-learn Breast Cancer Wisconsin dataset.
+Every third feature was multiplied by 1000 to create mixed numerical scales.
+All models used the same stratified 80/20 split (random_state=42).
+For scaled models, StandardScaler was inside a Pipeline and fitted on training data only.
+
+RESULTS TABLE
+                                 Accuracy — With StandardScaler  Accuracy — Without scaling  Precision — With StandardScaler  Precision — Without scaling  Recall — With StandardScaler  Recall — Without scaling  F1 — With StandardScaler  F1 — Without scaling
+Model                                                                                                                                                                                                                                                            
+KNN                                                      0.9561                      0.9035                           0.9589                       0.9178                        0.9722                    0.9306                    0.9655                0.9241
+RBF SVM                                                  0.9825                      0.8947                           0.9861                       0.8846                        0.9861                    0.9583                    0.9861                0.9200
+Random Forest                                            0.9561                      0.9561                           0.9589                       0.9589                        0.9722                    0.9722                    0.9655                0.9655
+Regularized Logistic Regression                          0.9825                      0.9737                           0.9861                       0.9726                        0.9861                    0.9861                    0.9861                0.9793
+
+OBSERVED EFFECT
+                             Model  Accuracy change (scaled - raw)  F1 change (scaled - raw)                             Observed comparison
+0                              KNN                          0.0526                    0.0414  Substantial change (>= 0.02 in accuracy or F1)
+1                          RBF SVM                          0.0877                    0.0661  Substantial change (>= 0.02 in accuracy or F1)
+2  Regularized Logistic Regression                          0.0088                    0.0068                           Small/moderate change
+3                    Random Forest                          0.0000                    0.0000  Little/no measurable change (<= 0.005 in both)
+
+WHY SCALING DID OR DID NOT MATTER
+
+KNN:
+KNN uses distances. Large-valued features can dominate Euclidean distance, changing which rows count as nearest neighbors.
+
+RBF SVM:
+The RBF kernel depends on squared distances: exp(-gamma * ||x-z||^2). Large-scale features can dominate similarities and change the decision boundary.
+
+Regularized Logistic Regression:
+L2 regularization penalizes coefficient squares. Feature units affect coefficient magnitudes, so the same penalty treats differently scaled features unevenly. Scaling can also improve optimization.
+
+Random Forest:
+Trees split one feature at a time using thresholds. Positive rescaling preserves feature ordering, so equivalent splits remain possible. Tree ensembles usually do not need scaling.
+
+Reporting rule: substantial means absolute accuracy or F1 change >= 0.02.
+Little/no measurable change means both absolute changes <= 0.005. These are practical cutoffs, not universal statistical rules.
+Results depend on the dataset, split, and model settings. Interpret the actual values rather than assuming scaling always helps.
+
+Files: results_comparison_table.csv, model_metrics_long.csv, scaling_effect_and_explanations.csv, accuracy_comparison.png, f1_comparison.png.

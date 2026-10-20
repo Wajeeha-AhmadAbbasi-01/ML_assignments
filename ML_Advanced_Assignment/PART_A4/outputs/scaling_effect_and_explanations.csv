@@ -1,0 +1,5 @@
+Model,Accuracy change (scaled - raw),F1 change (scaled - raw),Observed comparison,Mechanistic explanation
+KNN,0.05263157894736836,0.04137931034482767,Substantial change (>= 0.02 in accuracy or F1),"KNN uses distances. Large-valued features can dominate Euclidean distance, changing which rows count as nearest neighbors."
+RBF SVM,0.08771929824561397,0.06611111111111112,Substantial change (>= 0.02 in accuracy or F1),The RBF kernel depends on squared distances: exp(-gamma * ||x-z||^2). Large-scale features can dominate similarities and change the decision boundary.
+Regularized Logistic Regression,0.00877192982456132,0.006800766283524995,Small/moderate change,"L2 regularization penalizes coefficient squares. Feature units affect coefficient magnitudes, so the same penalty treats differently scaled features unevenly. Scaling can also improve optimization."
+Random Forest,0.0,0.0,Little/no measurable change (<= 0.005 in both),"Trees split one feature at a time using thresholds. Positive rescaling preserves feature ordering, so equivalent splits remain possible. Tree ensembles usually do not need scaling."
