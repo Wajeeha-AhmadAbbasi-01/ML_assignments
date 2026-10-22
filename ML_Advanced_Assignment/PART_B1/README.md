@@ -1,4 +1,4 @@
-# Text Classification with Naive Bayes: Theory Meets Practice
+# Text Classification with Naive Bayes
 
 ## Dataset
 Uses the SMS Spam Collection:
