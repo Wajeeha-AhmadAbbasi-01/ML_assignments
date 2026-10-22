@@ -1,0 +1,10 @@
+Q3 — Bootstrap feature-selection stability
+==========================================
+
+Bootstrap resamples: 80; each sample is drawn with replacement and contains 90 rows.
+Lasso alpha fixed at 0.08 to make selection frequencies comparable across resamples.
+Known signal features selected in at least 70% of resamples: gene_141, gene_223, gene_3, gene_8, gene_16, gene_66.
+Mean selection frequency for known signal features: 0.634.
+Mean selection frequency for noise features: 0.151.
+High selection frequency suggests robustness to changes in sampled observations. Correlated predictors can substitute for each other, so individual feature stability may be low even when a group carries signal.
+Stability is not proof of causality.

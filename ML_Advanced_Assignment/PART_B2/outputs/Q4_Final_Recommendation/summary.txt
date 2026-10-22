@@ -1,0 +1,14 @@
+Q4 — Final recommendation
+=========================
+
+This recommendation is based on this synthetic dataset; results may differ on real data.
+Lowest mean outer-fold MSE: ElasticNet (MSE=13.9329; R2=0.5931).
+Features selected in >=70% of bootstrap samples: 7 total; 6 known signal and 1 noise features.
+FINAL RECOMMENDATION:
+ElasticNet is the leading predictive choice in this run. It combines sparse selection with an L2 component that can share weight among correlated predictors, making it a strong default when correlated feature groups are expected.
+
+Rule of thumb:
+- Ridge: prediction with many potentially useful predictors; keeps all coefficients.
+- Lasso: sparse model and feature selection; may choose one predictor from a correlated group.
+- ElasticNet: sparse model when predictors are strongly correlated; often keeps groups together.
+For real data, keep feature selection and preprocessing inside training folds and evaluate on held-out data. Selection frequency does not establish causality.

@@ -1,0 +1,57 @@
+REGULARIZATION PROJECT — OVERALL SUMMARY
+========================================
+
+Q1 — Ridge regression from scratch
+==================================
+
+Dataset: 500 rows and 5 features; features 1 and 2 are highly correlated.
+Ridge alpha: 1.0. The intercept is not penalized.
+Maximum absolute coefficient difference from scikit-learn: 0.00000000.
+Scratch test MSE: 1.0690; scikit-learn test MSE: 1.0690.
+Interpretation: close coefficients and predictions validate the closed-form implementation.
+The matrix solve is used instead of explicitly calculating a matrix inverse for better numerical stability.
+
+
+Q2 — LassoCV feature-selection stability
+========================================
+
+Repeated random train/test splits: 20. Each split tunes alpha using 5-fold CV on training data only.
+Features selected in at least 80% of splits: feature_1, feature_13, feature_19, feature_26, feature_4, feature_8, feature_20.
+True signal features in this synthetic dataset: feature_1, feature_4, feature_8, feature_13, feature_19.
+Interpretation: high selection frequency suggests a feature is selected robustly across changes in the training sample.
+A feature can be useful but unstable when predictors overlap or the signal is weak; selection frequency is not proof of causality.
+Mean held-out R2 across splits: 0.9574.
+
+
+Q3 — Regularization paths
+=========================
+
+All three models use the same standardized predictors and target, and the same alpha grid.
+Ridge: coefficients usually shrink smoothly toward zero, but typically do not become exactly zero.
+Lasso: some coefficients become exactly zero, creating a sparse model and performing feature selection.
+ElasticNet: combines L1 and L2 penalties; it can set coefficients to zero while often keeping correlated predictors more jointly.
+As alpha increases, regularization becomes stronger. The precise path depends on the data and the scaling.
+
+
+Q4 — Nested cross-validation for ElasticNet
+===========================================
+
+Outer loop: 5 folds estimates generalization performance on held-out data.
+Inner loop: 4-fold GridSearchCV tunes alpha and l1_ratio using only each outer training fold.
+StandardScaler is inside the pipeline, so it is fitted only on the relevant training fold.
+Mean outer-fold MSE: 0.9271 (standard deviation 0.0788).
+Mean outer-fold R2: 0.9726.
+Best alpha values by outer fold: 0.01501, 0.00508, 0.04437, 0.04437, 0.008733.
+Best l1_ratio values by outer fold: 0.70, 0.10, 0.90, 0.90, 0.10.
+Interpretation: report the mean outer score as the nested-CV performance estimate; do not report the inner best score as the unbiased test estimate.
+
+
+Q5 — ElasticNet grouping effect
+===============================
+
+Synthetic data contains two groups of four highly correlated signal features plus four noise features.
+Group A selected: Lasso 3/4; ElasticNet 4/4.
+Group B selected: Lasso 2/4; ElasticNet 4/4.
+Test MSE — Lasso: 1.5136; ElasticNet: 1.0744.
+Expected pattern: Lasso often selects one or a few substitutes from a correlated group; ElasticNet's L2 component can spread weight across correlated predictors.
+This is an empirical demonstration, not a guarantee: results depend on the data, alpha, and l1_ratio.

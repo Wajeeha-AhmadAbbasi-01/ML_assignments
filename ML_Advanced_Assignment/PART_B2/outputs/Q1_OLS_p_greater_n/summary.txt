@@ -1,0 +1,9 @@
+Q1 — OLS in the p > n regime
+============================
+
+Dataset: n=90 samples, p=300 features; p > n.
+Training split has 67 rows and 300 features; design-matrix rank=67.
+OLS train MSE=0.0000; OLS test MSE=52.6623.
+Ridge train MSE=0.0577; Ridge test MSE=51.9331.
+OLS can return a least-squares solution even when p > n, but coefficients are not uniquely determined and can be unstable. A near-perfect training fit does not guarantee good test performance.
+Ridge adds an L2 penalty that stabilizes coefficients. Compare held-out test MSE rather than judging only by training fit.

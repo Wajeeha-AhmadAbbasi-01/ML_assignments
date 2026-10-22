@@ -1,0 +1,4 @@
+group,lasso_selected_count,elasticnet_selected_count,lasso_mean_abs_coefficient,elasticnet_mean_abs_coefficient
+Group A,3,4,0.34128866427291055,0.3824876692929099
+Group B,2,4,0.3788405372119138,0.41739896790891856
+Noise,0,0,0.0,0.0

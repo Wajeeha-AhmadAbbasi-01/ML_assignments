@@ -1,0 +1,9 @@
+Q1 — Ridge regression from scratch
+==================================
+
+Dataset: 500 rows and 5 features; features 1 and 2 are highly correlated.
+Ridge alpha: 1.0. The intercept is not penalized.
+Maximum absolute coefficient difference from scikit-learn: 0.00000000.
+Scratch test MSE: 1.0690; scikit-learn test MSE: 1.0690.
+Interpretation: close coefficients and predictions validate the closed-form implementation.
+The matrix solve is used instead of explicitly calculating a matrix inverse for better numerical stability.

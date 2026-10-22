@@ -1,0 +1,13 @@
+feature,group,lasso_coefficient,elasticnet_coefficient,lasso_selected,elasticnet_selected
+feature_1,Group A,0.9635264969583867,0.4155219632182401,True,True
+feature_2,Group A,0.0,0.3625881152756166,False,True
+feature_3,Group A,0.07215922816479836,0.3694303596486701,True,True
+feature_4,Group A,0.3294689319684572,0.3824102390291129,True,True
+feature_5,Group B,0.8614412076674791,0.44423547574649264,True,True
+feature_6,Group B,0.0,0.4018065982589373,False,True
+feature_7,Group B,0.6539209411801762,0.4305601881977874,True,True
+feature_8,Group B,0.0,0.39299360943245687,False,True
+feature_9,Noise,-0.0,-0.0,False,False
+feature_10,Noise,-0.0,-0.0,False,False
+feature_11,Noise,0.0,0.0,False,False
+feature_12,Noise,0.0,-0.0,False,False

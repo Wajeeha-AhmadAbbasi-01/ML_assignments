@@ -1,0 +1,53 @@
+SPARSE MODELING FOR HIGH-DIMENSIONAL DATA — OVERALL SUMMARY
+===========================================================
+
+Q1 — OLS in the p > n regime
+============================
+
+Dataset: n=90 samples, p=300 features; p > n.
+Training split has 67 rows and 300 features; design-matrix rank=67.
+OLS train MSE=0.0000; OLS test MSE=52.6623.
+Ridge train MSE=0.0577; Ridge test MSE=51.9331.
+OLS can return a least-squares solution even when p > n, but coefficients are not uniquely determined and can be unstable. A near-perfect training fit does not guarantee good test performance.
+Ridge adds an L2 penalty that stabilizes coefficients. Compare held-out test MSE rather than judging only by training fit.
+
+
+Q2 — Nested CV comparison
+=========================
+
+Outer loop: 5 folds; inner tuning loop: 4 folds.
+Scaling is inside the pipeline, so it is fitted only on each training fold.
+Outer scores estimate generalization; inner scores are used to choose hyperparameters.
+Mean outer-fold results:
+ElasticNet: MSE=13.9329 (SD=7.9321); R2=0.5931 (SD=0.0538).
+Lasso: MSE=15.0032 (SD=8.3233); R2=0.5660 (SD=0.0441).
+Ridge: MSE=37.6857 (SD=15.4163); R2=-0.1366 (SD=0.1149).
+Lowest mean outer-fold MSE in this run: ElasticNet.
+
+
+Q3 — Bootstrap feature-selection stability
+==========================================
+
+Bootstrap resamples: 80; each sample is drawn with replacement and contains 90 rows.
+Lasso alpha fixed at 0.08 to make selection frequencies comparable across resamples.
+Known signal features selected in at least 70% of resamples: gene_141, gene_223, gene_3, gene_8, gene_16, gene_66.
+Mean selection frequency for known signal features: 0.634.
+Mean selection frequency for noise features: 0.151.
+High selection frequency suggests robustness to changes in sampled observations. Correlated predictors can substitute for each other, so individual feature stability may be low even when a group carries signal.
+Stability is not proof of causality.
+
+
+Q4 — Final recommendation
+=========================
+
+This recommendation is based on this synthetic dataset; results may differ on real data.
+Lowest mean outer-fold MSE: ElasticNet (MSE=13.9329; R2=0.5931).
+Features selected in >=70% of bootstrap samples: 7 total; 6 known signal and 1 noise features.
+FINAL RECOMMENDATION:
+ElasticNet is the leading predictive choice in this run. It combines sparse selection with an L2 component that can share weight among correlated predictors, making it a strong default when correlated feature groups are expected.
+
+Rule of thumb:
+- Ridge: prediction with many potentially useful predictors; keeps all coefficients.
+- Lasso: sparse model and feature selection; may choose one predictor from a correlated group.
+- ElasticNet: sparse model when predictors are strongly correlated; often keeps groups together.
+For real data, keep feature selection and preprocessing inside training folds and evaluate on held-out data. Selection frequency does not establish causality.

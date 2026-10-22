@@ -1,0 +1,11 @@
+Q2 — Nested CV comparison
+=========================
+
+Outer loop: 5 folds; inner tuning loop: 4 folds.
+Scaling is inside the pipeline, so it is fitted only on each training fold.
+Outer scores estimate generalization; inner scores are used to choose hyperparameters.
+Mean outer-fold results:
+ElasticNet: MSE=13.9329 (SD=7.9321); R2=0.5931 (SD=0.0538).
+Lasso: MSE=15.0032 (SD=8.3233); R2=0.5660 (SD=0.0441).
+Ridge: MSE=37.6857 (SD=15.4163); R2=-0.1366 (SD=0.1149).
+Lowest mean outer-fold MSE in this run: ElasticNet.

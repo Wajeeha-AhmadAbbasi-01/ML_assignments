@@ -1,0 +1,9 @@
+Q5 — ElasticNet grouping effect
+===============================
+
+Synthetic data contains two groups of four highly correlated signal features plus four noise features.
+Group A selected: Lasso 3/4; ElasticNet 4/4.
+Group B selected: Lasso 2/4; ElasticNet 4/4.
+Test MSE — Lasso: 1.5136; ElasticNet: 1.0744.
+Expected pattern: Lasso often selects one or a few substitutes from a correlated group; ElasticNet's L2 component can spread weight across correlated predictors.
+This is an empirical demonstration, not a guarantee: results depend on the data, alpha, and l1_ratio.

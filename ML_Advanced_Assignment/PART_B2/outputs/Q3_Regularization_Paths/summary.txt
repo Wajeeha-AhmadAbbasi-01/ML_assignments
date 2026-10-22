@@ -1,0 +1,8 @@
+Q3 — Regularization paths
+=========================
+
+All three models use the same standardized predictors and target, and the same alpha grid.
+Ridge: coefficients usually shrink smoothly toward zero, but typically do not become exactly zero.
+Lasso: some coefficients become exactly zero, creating a sparse model and performing feature selection.
+ElasticNet: combines L1 and L2 penalties; it can set coefficients to zero while often keeping correlated predictors more jointly.
+As alpha increases, regularization becomes stronger. The precise path depends on the data and the scaling.

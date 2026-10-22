@@ -1,0 +1,9 @@
+Q2 — LassoCV feature-selection stability
+========================================
+
+Repeated random train/test splits: 20. Each split tunes alpha using 5-fold CV on training data only.
+Features selected in at least 80% of splits: feature_1, feature_13, feature_19, feature_26, feature_4, feature_8, feature_20.
+True signal features in this synthetic dataset: feature_1, feature_4, feature_8, feature_13, feature_19.
+Interpretation: high selection frequency suggests a feature is selected robustly across changes in the training sample.
+A feature can be useful but unstable when predictors overlap or the signal is weak; selection frequency is not proof of causality.
+Mean held-out R2 across splits: 0.9574.
