@@ -1,0 +1,39 @@
+TEXT CLASSIFICATION WITH NAIVE BAYES — PROJECT SUMMARY
+
+This project implements the five requested experiments using the SMS Spam Collection dataset.
+
+Q1 — Scratch Gaussian Naive Bayes
+- Estimates class-wise feature means, variances and class priors.
+- Computes Gaussian log-likelihoods and normalized log-posterior probabilities.
+- Compares its predictions with scikit-learn GaussianNB.
+- Output: Q1_scratch_vs_sklearn.csv.
+
+Q2 — Compare all three Naive Bayes variants
+- GaussianNB uses dense TF-IDF features.
+- MultinomialNB uses word-count features.
+- BernoulliNB uses binary word-presence features.
+- Compares accuracy, spam precision, spam recall and spam F1.
+- Output: Q2_three_variant_comparison.csv.
+
+Q3 — Tune smoothing
+- Uses stratified 5-fold GridSearchCV to tune alpha for MultinomialNB and BernoulliNB.
+- Selects alpha using training data only, then evaluates the selected model on the held-out test set.
+- Outputs: Q3_alpha_tuning_summary.csv and per-alpha cross-validation CSV files.
+
+Q4 — Interpret influential words
+- Calculates smoothed log-likelihood ratios from training word counts.
+- Positive ratios indicate words more associated with spam; negative ratios indicate words more associated with ham.
+- Outputs: Q4_word_log_likelihood_ratios.csv, Q4_top_words_by_class.csv and Q4_top_word_log_ratios.png.
+
+Q5 — Independence assumption
+- Discusses dependent phrases such as “call now”, “free entry” and “claim prize”.
+- Duplicates a spam-associated word feature to create a controlled dependence violation.
+- Measures probability shifts and compares before/after classification metrics.
+- Outputs: Q5_duplicate_feature_effect.csv, Q5_independence_effect_metrics.csv and Q5_duplicate_feature_effect.png.
+
+Combined output:
+- all_questions_metrics.csv
+- SUMMARY.txt
+
+Execution note:
+Actual metric values and corpus-specific influential words are calculated when the script runs on the dataset. They are not pre-filled or fabricated in this summary.

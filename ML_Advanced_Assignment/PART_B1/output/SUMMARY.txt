@@ -1,0 +1,36 @@
+Naive Bayes Applied Questions — Results Summary
+Dataset: SMS messages (5572 rows; spam rate: 13.41%)
+All questions use the same SMS Spam Collection dataset and a fixed random seed.
+
+Q1 — Gaussian Naive Bayes from scratch
+Prediction agreement with sklearn GaussianNB: 1.0000
+Scratch model test accuracy: 0.6454
+The implementation estimates each class-feature mean and variance, then combines Gaussian log-likelihoods with class priors.
+
+Q2 — MultinomialNB smoothing parameter
+Best alpha by spam F1 on the held-out validation set: 2.0
+At that alpha: accuracy=0.9749, precision=0.9130, recall=0.8984, F1=0.9057.
+Alpha adds smoothing to word counts. The CSV and plot show how the scores change across tested alpha values.
+
+Q3 — BernoulliNB vs MultinomialNB
+Better spam F1 on this split: BernoulliNB (binary presence) (F1=0.9060).
+BernoulliNB models whether a word appears at least once; MultinomialNB also uses how many times it appears. Results depend on the corpus and split.
+
+Q4 — Double counting from a duplicated feature
+Mean absolute shift in predicted spam probability: 0.0007
+Fraction of predictions that changed at threshold 0.5: 0.07%
+The same word-count feature was added twice. Naive Bayes treats the duplicate as separate evidence, so probabilities can become more extreme or shift incorrectly.
+
+Q5 — Learning curves: GaussianNB vs Logistic Regression
+The plot shows cross-validated accuracy as the number of training messages increases.
+GaussianNB is generative: it models each class's feature distributions. Logistic Regression is discriminative: it learns the class boundary directly.
+Compare the curves rather than assuming one model always learns faster; the outcome depends on the dataset and feature representation.
+
+Files created
+- Q1_gaussian_nb_predictions.csv
+- Q2_alpha_grid_search.csv and Q2_alpha_grid_search.png
+- Q3_bernoulli_vs_multinomial.csv
+- Q4_duplicate_feature_probabilities.csv and Q4_duplicate_feature_probabilities.png
+- Q5_learning_curve_scores.csv and Q5_learning_curves.png
+- all_questions_metrics.csv
+- SUMMARY.txt
